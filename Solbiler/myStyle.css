@@ -1,0 +1,400 @@
+/* Basic CSS reset */
+*,
+:after,
+:before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --base-space: 5px;
+    --container-width: 1024px;
+    --wide-width: 1280px;
+    --color-black: #333;
+    --color-white: hsl(33, 30%, 98%);
+    --color-pink: hsl(337, 96%, 38%);
+    --color-blue: hsl(202, 96%, 17%);
+    --color-teal: hsl(185, 96%, 33%);
+    --color-beige: hsl(33, 58%, 87%);
+    --color-brown: black;
+}
+
+html {
+    font-size: 100%;
+}
+
+.page__body {
+    font-family: Verdana, Geneva, sans-serif;
+    max-width: 1680px;
+    margin: 0 auto;
+    background-color: white;
+
+}
+
+main {
+    padding-top: 60px;
+    height: 100%;
+}
+
+#nav_bar {
+    background-color: green;
+    position: relative;
+    width: 100%;
+
+
+}
+
+
+/*--------- Mobile style and layout ------*/
+
+
+
+
+.mobile_search_form {
+    display: none;
+
+}
+
+.mobile_search_input {
+    border: 1px solid black;
+    padding: 5px;
+    width: 98%;
+}
+
+/*--------- Header and navigation -------*/
+
+
+
+.menuitems__container {
+
+    width: 100%;
+    position: relative;
+}
+
+.logo_style {
+    color: black;
+    float: left;
+    margin: auto;
+    position: relative;
+}
+
+.logo {
+    float: left;
+
+}
+
+
+.dropbtn {
+    background-color: #171717;
+    color: white;
+    padding: 12px;
+    font-size: 12px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    margin: 1px;
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    width: auto;
+}
+
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+
+.overskrift {
+    text-align: center;
+    font-style: italic;
+    font-size: 25px;
+}
+
+
+/*--------- Footer section ------*/
+
+.page_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25rem;
+    align-items: center;
+    text-align: center;
+    border-top: 2px solid black;
+    padding-top: 25px;
+    color: black;
+}
+
+
+
+
+.footer_card_heading {
+    margin-bottom: 7px;
+    color: black;
+}
+
+.footer_card:first-child .footer_card_heading {
+    margin-bottom: 16px;
+    color: black;
+}
+
+.footer_link {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    background-image: url("road.jpg");
+    background-position: center center;
+    max-width: var(--wide-width);
+    margin: 0 auto;
+    height: 500px;
+    background-size: cover;
+
+}
+
+@media only screen and (min-width: 900px) {
+    
+    
+    .search_form {
+    display: flex;
+}
+    
+    .search-box {
+        background-color: hsla(33, 30%, 98%, 90%);
+        float: left;
+        padding: calc(3 * var(--base-space));
+        border: 3px solid black;
+        border-radius: 4px;
+        transition: transform 0.2s ease-in-out;
+        box-shadow: inset var black 1px 1px 3px;
+        min-width: 350px;
+    }
+}
+
+
+.Login_icon {
+    height: 50px;
+    margin: 5px;
+    float;
+    right;
+    display: flex;
+
+}
+
+.menuitems__container {
+
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.search_form {
+    display: flex;
+    float: right;
+    padding: 50px;
+}
+
+.search_field {
+    height: 27px;
+    margin-left: 25px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    border: 1px solid rgba(51, 51, 51, 0.4);
+}
+
+#search_logo {
+    height: 23px;
+}
+
+.mobile_search_form {
+    display: none;
+}
+
+
+
+
+
+.page_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 150px;
+    align-items: center;
+    text-align: center;
+    border-top: 2px solid black;
+    padding-top: 25px;
+    color: black;
+}
+
+.footer_card {
+    width: 13rem;
+}
+
+
+}
+
+@media screen and (min-width: 600px) {
+    .search-box {
+        transform: translateX(calc(4 * var(--base-space)));
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .search-box {
+        transform: translateX(calc((var(--wide-width) - var(--container-width)) / 2));
+    }
+}
+
+.search-box h2 {
+    color: var(--color-blue);
+}
+
+.search-box label {
+    display: block;
+    color: var(--color-blue);
+}
+
+.search-box .row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: calc(3 * var(--base-space));
+}
+
+.search-box .row > * {
+    flex-basis: 47%;
+}
+
+.search-box input,
+.search-box select {
+    padding: var(--base-space);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-brown);
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-box input[type="number"] {
+    text-align: right;
+}
+
+.search-box button[type="submit"] {
+  padding: var(--base-space) calc(4 * var(--base-space));
+  background-color: var(--color-brown);
+  border: 2px solid var(--color-beige);
+  border-radius: 4px;
+  color: var(--color-beige);
+  font-weight: 600;
+  font-size: 16px;
+  float: right;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.search-box button[type="submit"]:hover {
+  background-color: var(--color-pink);
+  cursor: pointer;
+}
+/* List of cars ------------------------------- */
+
+.car {
+    margin: calc(4 * var(--base-space)) auto;
+    padding: calc(2 * var(--base-space));
+    background-color: white;
+    border: 3px solid var(--color-beige);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: var(--container-width);
+}
+
+.car h1 {
+    margin: 0 calc(2 * var(--base-space));
+    flex-basis: 30%;
+    color: var(--color-pink);
+}
+
+.car img {
+    border-radius: 4px;
+    display: block;
+    border: 1px solid var(--color-brown);
+}
+
+.car dl {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.car dt {
+    font-weight: 600;
+    float: left;
+}
+
+.car dt:after {
+    content: ":";
+    margin-right: 3px;
+}
+
+.car dd {
+    margin: 0;
+}
+
+.car .price {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.car button {
+    border: 2px solid var(--color-beige);
+    border-radius: 6px;
+    background-color: var(--color-pink);
+    padding: var(--base-space) calc(2 * var(--base-space));
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 16px;
+    width: 100%;
+    line-height: 1.5;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.car button:hover {
+    background-color: var(--color-blue);
+    cursor: pointer;
+}

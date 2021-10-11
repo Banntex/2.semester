@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solbiler ApS — lej din bil her</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Solbiler ApS</h1>
+      <nav>
+        <a href="javascript:void(0)" class="login">Log ind</a>
+      </nav>
+    </header>
+    <main>
+      <div class="hero">
+        <div class="search-box">
+          <h2>Find bilen som passer til dig</h2>
+          <form method="post">
+            <div class="row">
+              <div>
+                <label for="date-from">Jeg henter den</label>
+                <input type="date" name="date-from" placeholder="dd/mm/åååå" />
+              </div>
+              <div>
+                <label for="date-to">Jeg afleverer den</label>
+                <input type="date" name="date-to" placeholder="dd/mm/åååå" />
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label for="person-count">Antal personer</label>
+                <input
+                  type="number"
+                  value="1"
+                  min="1"
+                  max="7"
+                  name="person-count"
+                />
+              </div>
+              <div>
+                <label for="luggage-count">Antal kufferter</label>
+                <select name="luggage-count">
+                  <option>0 - kun taske</option>
+                  <option>1 kuffert</option>
+                  <option>2 kufferter</option>
+                  <option>3 kufferter</option>
+                  <option>4 kufferter</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <section class="cars-list">
+        <article class="car">
+          <img
+            src="vw-beetle-400x200.jpg"
+            width="200"
+            height="100"
+            alt="Billede af VW Beetle"
+          />
+          <h1>VW Beetle</h1>
+          <dl>
+            <dt>Kategori</dt>
+            <dd>Budget</dd>
+            <dt>Personer</dt>
+            <dd>4</dd>
+            <dt>Kufferter</dt>
+            <dd>0 (kun taske)</dd>
+          </dl>
+          <div>
+            <p class="price">DKK 899,75</p>
+            <button>Book nu</button>
+          </div>
+        </article>
+        <article class="car">
+          <img
+            src="ford-mustang-400x200.jpg"
+            width="200"
+            height="100"
+            alt="Billede af Ford Mustang"
+          />
+          <h1>Ford Mustang</h1>
+          <dl>
+            <dt>Kategori</dt>
+            <dd>Mellemklasse</dd>
+            <dt>Personer</dt>
+            <dd>5</dd>
+            <dt>Kufferter</dt>
+            <dd>3</dd>
+          </dl>
+          <div>
+            <p class="price">DKK 1699,75</p>
+            <button>Book nu</button>
+          </div>
+        </article>
+        <article class="car">
+          <img
+            src="vw-california-400x200.jpg"
+            width="200"
+            height="100"
+            alt="Billede af VW California"
+          />
+          <h1>VW California</h1>
+          <dl>
+            <dt>Kategori</dt>
+            <dd>Minivan</dd>
+            <dt>Personer</dt>
+            <dd>7</dd>
+            <dt>Kufferter</dt>
+            <dd>4</dd>
+          </dl>
+          <div>
+            <p class="price">DKK 1899,75</p>
+            <button>Book nu</button>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>© 2021 Solbiler ApS</footer>
+  </body>
+</html>

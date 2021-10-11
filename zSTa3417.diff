@@ -1,0 +1,125 @@
+11c11
+<     price: "DKK 899,75",
+---
+>     dailySurcharge: 0,
+19c19
+<     price: "DKK 1699,75",
+---
+>     dailySurcharge: 60,
+27c27
+<     price: "DKK 1899,75",
+---
+>     dailySurcharge: 105,
+32a33,36
+> /* Find de to dato felter */
+> var dateFromField = document.getElementById("date-from");
+> var dateToField = document.getElementById("date-to");
+> 
+41a46,60
+> /* SÆT STARTVÆRDIER --------------------------------------------------------- */
+> 
+> /* Dags dato på formen åååå-mm-dd:
+>  * https://devdocs.io/javascript/global_objects/date/date
+>  * https://devdocs.io/javascript/global_objects/date/toisostring
+>  * https://devdocs.io/javascript/global_objects/string/split
+>  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#referring_to_array_elements
+>  */
+> var todaysDate = new Date().toISOString().split("T")[0];
+> 
+> /* Når scriptet kører sættes værdien af de to datofelter til dags dato, som er et
+>  * rimeligt udgangspunkt */
+> dateFromField.value = todaysDate;
+> dateToField.value = todaysDate;
+> 
+43a63,143
+> /* Beregning af længden af lejeperioden ud fra de valgte datoer */
+> function calculatePeriodInDays() {
+>   /* Værdien af de to dato-felter, som er på formen åååå-mm-dd */
+>   var dateFromValue = dateFromField.value;
+>   var dateToValue = dateToField.value;
+> 
+>   /* 1000 millisekunder per sekund
+>    * 60 sekunder per minut
+>    * 60 minutter per time
+>    * 24 timer per døgn
+>    */
+>   var millisecondsInADay = 1000 * 60 * 60 * 24;
+> 
+>   /* Vi laver et dato objekt ud af felt værdierne via en Date constructor:
+>    * https://devdocs.io/javascript/global_objects/date/date
+>    *
+>    * ... og får en talværdi i millisekunder ud af datoerne med getTime() metoden:
+>    * https://devdocs.io/javascript/global_objects/date/gettime
+>    *
+>    * ...og trækker de to værdier fra hinanden så vi får perioden i en antal
+>    * millisekunder, som vi deler med antal millisekunder på et døgn for at få et
+>    * antal dage
+>    *
+>    * ...og afrunder med Math.round for at sikre at vi får et helt antal dage:
+>    * https://devdocs.io/javascript/global_objects/math/round
+>    *
+>    * ...og lægger 1 til det beregnede tal for at sikre at perioden er inkl start-
+>    * og slutdato. Dvs. hvis man henter og afleverer samme dag tæller det som én
+>    * dag.
+>    */
+>   var rentalPeriodInDays =
+>     Math.round(
+>       (new Date(dateToValue).getTime() - new Date(dateFromValue).getTime()) /
+>         millisecondsInADay
+>     ) + 1;
+> 
+>   return rentalPeriodInDays;
+> }
+> 
+> /* Beregning af lejeprisen inkl. moms.
+>  * Bemærk at dailySurcharge parameteren har
+>  * fået en default værdi hvis den ikke er sat når funktionen kaldes:
+>  * https://devdocs.io/javascript/functions/default_parameters
+>  */
+> function calculateRentalPrice(dailySurcharge = 0) {
+>   var baseRentalPrice = 495;
+>   var dailyRentalPrice = 100;
+>   var vatRate = 0.25;
+>   var rentalPeriodInDays = calculatePeriodInDays();
+> 
+>   var resultExclVat =
+>     baseRentalPrice + rentalPeriodInDays * (dailyRentalPrice + dailySurcharge);
+>   var resultInclVat = resultExclVat * (1 + vatRate);
+> 
+>   return resultInclVat;
+> }
+> 
+> /* Pæn formatering af prisen ved hjælp af:
+>  * https://devdocs.io/javascript/global_objects/number/tolocalestring
+>  * https://devdocs.io/javascript/global_objects/intl/numberformat/numberformat#parameters
+>  */
+> function formatPrice(number) {
+>   /* Lidt basal fejlhåndtering — hvis noget er gået galt et sted i beregningen
+>    * vil det samlede resultat være "NaN" — Not a Number:
+>    * https://devdocs.io/javascript/global_objects/nan
+>    * https://devdocs.io/javascript/global_objects/number/isnan
+>    *
+>    * Det vil for eksempel kunne ske hvis brugeren ikke har valgt datoer eller
+>    * udfyldt noget i feltet, som ikke er en gyldig dato. I det tilfælde kan vi
+>    * ikke rigtig vise en pris.
+>    */
+>   if (Number.isNaN(number)) {
+>     return "Ukendt pris";
+>   } else {
+>     return number.toLocaleString("da-DK", {
+>       style: "currency",
+>       currency: "DKK",
+>     });
+>   }
+> }
+> 
+52a153,157
+>   /* Beregn lejeprisen via den funktion, vi har lavet — som har brug for at kende
+>    * den daglige tillægspris for den pågældende bil, så den sender vi med som
+>    * argument til funktionen. */
+>   var rentalPrice = calculateRentalPrice(carObject.dailySurcharge);
+> 
+60c165
+<   carNode.querySelector(".price").innerText = carObject.price;
+---
+>   carNode.querySelector(".price").innerText = formatPrice(rentalPrice);

@@ -1,0 +1,36 @@
+:root {
+  --color-pink: #f22e8a;
+  --color-purple: #3b0273;
+  --color-orange: #f27830;
+  --color-beige: #f2e6ce;
+}
+
+body {
+  background-color: var(--color-beige);
+  font-family: "Patua One", sans-serif;
+  margin: 30px;
+  color: var(--color-orange);
+  font-size: 20px;
+}
+
+img {
+  border: 2px solid var(--color-purple);
+  border-radius: 4px;
+  box-shadow: var(--color-orange) 4px 4px 0px;
+  transform: rotate(-2deg);
+}
+
+dt {
+  color: var(--color-purple);
+  float: left;
+  margin-right: 5px;
+}
+
+dt:after {
+  content: ": ";
+}
+
+dd {
+  margin: 0;
+  padding: 0;
+}

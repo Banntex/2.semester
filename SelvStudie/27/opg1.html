@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang ="da">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulation af DOM</title>
+    
+    <style>
+        #indhold{
+            color: red;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <div id="div_output">Hej Verden!</div>
+    <script>
+    const output = document.getElementById('div_output')
+     output.innerHTML = `<div id="indhold">Hej Verden</div>`;
+   output.insertAdjacentHTML('beforeend','<div id="div_output2">Den vil jeg erobre!</div>');
+        output.insertAdjacentHTML('afterend', `<img src="earth-11015_1280.jpg" alt="En hund" />`);
+ 
+
+    </script>
+</body>
+</html>

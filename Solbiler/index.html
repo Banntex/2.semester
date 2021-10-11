@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="myStyle.css">
+    <link rel="stylesheet" href="mobile.css">
+    <title>Solbiler | Forside</title>
+</head>
+
+<body>
+    <header class="navigation__container">
+        <nav id="nav_bar">
+            <!-- The mobile menu icon -->
+            <label for="mobileicon" class="mobileiconlabel">&#9776;</label>
+            <input type="checkbox" id="mobileicon" class="mobileicon">
+
+            <!-- Menu items -->
+
+            <div class="menuitems__container">
+
+                <!--The company logo-->
+
+                <div class="logo_style">
+                    <h2 class="logo">Solbiler Aps</h2>
+                </div>
+                <button class="dropbtn" onclick="location.href='index.html';">Hjem</button>
+
+
+
+                <button class="dropbtn" onclick="location.href='kontakt.html';">Kontakt os</button>
+
+
+                <button class="dropbtn" onclick="location.href='#';">Opret bruger</button>
+
+
+                <button onclick="" class="dropbtn">Log ind</button>
+                <img class="Login_icon" src="login.png" alt="Login icon">
+                <div id="myDropdown8" class="dropdown-content">
+
+
+                </div>
+
+                <form class="search_form">
+                    <input type="search" class="search_field" placeholder="Search...">
+                    <button type="button"><img src="search.svg" alt="Search icon" id="search_logo"></button>
+                </form>
+
+
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="search-box">
+                <h2>Lej din drømmebil!</h2>
+                <form method="post" id="search-form">
+                    <div class="row">
+                        <div>
+                            <label for="date-from">Jeg afhenter den</label>
+                            <input type="date" id="date-from" value="1995-01-02" name="date-from" placeholder="dd/mm/åååå" />
+                        </div>
+                        <div>
+                            <label for="date-to">Jeg afleverer den</label>
+                            <input type="date" id="date-to" name="date-to" placeholder="dd/mm/åååå" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label for="person-count">Antal personer</label>
+                            <input type="number" value="1" min="1" max="7" name="person-count" id="person-count" />
+                        </div>
+                        <div>
+                            <label for="luggage-count">Antal kufferter</label>
+                            <select name="luggage-count" id="luggage-count">
+                                <option value="0">0 - kun taske</option>
+                                <option value="1">1 kuffert</option>
+                                <option value="2">2 kufferter</option>
+                                <option value="3">3 kufferter</option>
+                                <option value="4">4 kufferter</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" id="search-button">Søg</button>
+                </form>
+            </div>
+        </div>
+        <template id="car-template">
+            <article class="car">
+                <img width="200" height="100" />
+                <h1></h1>
+                <dl>
+                    <dt>Kategori</dt>
+                    <dd class="category"></dd>
+                    <dt>Personer</dt>
+                    <dd class="person-count"></dd>
+                    <dt>Kufferter</dt>
+                    <dd class="luggage-count"></dd>
+                </dl>
+                <div>
+                    <p class="price"></p>
+                    <button>Book nu</button>
+                </div>
+            </article>
+        </template>
+        <section id="cars-list"></section>
+    </main>
+    <script src="solbiler.js"></script>
+</body>
+
+</html>

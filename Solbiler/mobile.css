@@ -1,0 +1,108 @@
+/* [ON MOBILE DEVICES] */
+
+.navigation__container {
+   /* background: #000000;*/
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(34,56, 178,0.21);
+    z-index: 9999;
+}
+
+.mobileiconlabel {
+    display: inline-block;
+   /* color: #ffffff;*/
+   /* background: #a02620;*/
+    font-style: normal;
+    font-size: 1.2rem;
+    padding: 10px 5px;
+}
+
+.menuitem {
+    display: block;
+    width: 100%;
+    padding: 10px;
+   /* color: white;**/
+    color: :#333333;
+    text-decoration: none;
+    text-align: center;
+}
+.active_menuitem {
+    background-color: rgba(34, 56, 178, 0.21);
+    color:darkblue;
+}
+.cta_style {
+ 
+    color: white;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Hide checkbox and menuitems until clicked */
+.menuitems__container,
+.mobileicon {
+    display: none;
+}
+
+/* Show menuitems when mobileicon-label is clicked */
+.navigation__container input:checked ~ .menuitems__container {
+    display: block;
+}
+
+/* Display company logo to the right */
+.companylogo {
+    position: absolute;
+    top: -10px;
+    right: 105px;
+    width: 60px;
+}
+.search_form {
+    display: none;
+}
+.Login_icon {
+    display: none;
+}
+
+
+/* Add rules [ON WIDE SCREENS] */
+
+@media only screen and (min-width: 900px) {
+
+    /* Hide Mobile icon and its label */
+    .mobileiconlabel,
+    .mobileicon {
+        display: none;
+    }
+
+    
+    /* Make menuitems flex horisontally (on a row) */
+    .menuitems__container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+    .menuitem {
+        width: 130px;
+    }
+
+
+    .menuitem:hover {
+        background-color: rgba(34, 56, 178, 0.21);
+        color: darkblue;
+    }
+    .search_form {
+    display: flex;
+}
+    .Login_icon {
+    display: flex;;
+}
+    
+    /* Display company logo to the left */
+    .companylogo {
+        left: 10px;
+    }
+
+}
