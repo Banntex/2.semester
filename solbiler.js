@@ -1,22 +1,16 @@
 var dateFromField = document.getElementById("date-from");
 var dateToField = document.getElementById("date-to");
 
-
 var carsList = document.getElementById("cars-list");
-
 
 var carTemplate = document.getElementById("car-template");
 
-
 var searchButton = document.getElementById("search-button");
-
 
 var todaysDate = new Date().toISOString().split("T")[0];
 
-
 dateFromField.value = todaysDate;
 dateToField.value = todaysDate;
-
 
 function calculatePeriodInDays() {
   
@@ -24,13 +18,10 @@ function calculatePeriodInDays() {
   var dateTo = new Date(dateToField.value);
 
   var differenceInMilliseconds = dateTo.getTime() - dateFrom.getTime();
-
   
   var millisecondsInADay = 1000 * 60 * 60 * 24;
 
-  
-   
-  var rentalPeriodInDays =
+     var rentalPeriodInDays =
     Math.round(differenceInMilliseconds / millisecondsInADay) + 1;
 
   return rentalPeriodInDays;
@@ -41,12 +32,25 @@ function calculateRentalPrice(dailySurcharge = 0, rentalPeriodInDays) {
   var baseRentalPrice = 495;
   var dailyRentalPrice = 100;
   var vatRate = 0.25;
+  var chauffeur = 199;
+  var childSeatBig = 155;
+  var childSeatSmall = 140;
+  var lift_net = 100;
+  var GPS = 250;
+  var snowChains = 188;
+  var roadAssistance = 120;
 
   var resultExclVat =
     baseRentalPrice + rentalPeriodInDays * (dailyRentalPrice + dailySurcharge);
   var resultInclVat = resultExclVat * (1 + vatRate);
 
   return resultInclVat;
+}
+function extra(){
+
+
+
+
 }
 
 function formatPrice(number) {
@@ -71,7 +75,6 @@ function showCar(carObject, rentalPeriodInDays) {
     carObject.dailySurcharge,
     rentalPeriodInDays
   );
-
  
   carNode.querySelector("img").src = carObject.imageSrc;
   carNode.querySelector("img").alt = `Billede af ${carObject.name}`;
@@ -81,8 +84,7 @@ function showCar(carObject, rentalPeriodInDays) {
   carNode.querySelector(".luggage-count").innerText = carObject.luggageCount;
   carNode.querySelector(".price").innerText = formatPrice(rentalPrice);
 
-  
-  carsList.appendChild(carNode);
+    carsList.appendChild(carNode);
 }
 
 function handleSearch(event) {
@@ -100,7 +102,7 @@ function handleSearch(event) {
 
   var rentalPeriodInDays = calculatePeriodInDays();
     
-  fetch("https://api.jsonbin.io/v3/b/61387e669548541c29ae1184", {
+  fetch("https://api.jsonbin.io/b/61387e669548541c29ae1184/1", {
     headers: {
       "X-Master-Key":
         "$2b$10$A0AwlK4vKaImkWDDJb2c9.K8W1yZAnbJOJ6R.q6d9/ZCh6YSBBgxm",

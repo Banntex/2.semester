@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="myStyle.css">
+        <link rel="stylesheet" href="mobile.css">
+        <title>Solbiler | Forside</title>
+    </head>
+<body>
+
+    <header class="navigation__container">
+        <nav id="nav_bar">
+            <!-- The mobile menu icon -->
+            <label for="mobileicon" class="mobileiconlabel">&#9776;</label>
+            <input type="checkbox" id="mobileicon" class="mobileicon">
+
+            <!-- Menu items -->
+
+            <div class="menuitems__container">
+
+                <!--The company logo-->
+
+                <div class="logo_style">
+                    <h2 class="logo">Solbiler Aps</h2>
+                </div>
+                <button class="dropbtn" onclick="location.href='index.html';">Hjem</button>
+
+
+
+                <button class="dropbtn" onclick="location.href='ekstra.html';">Kontakt os</button>
+
+
+                <button class="dropbtn" onclick="location.href='#';">Opret bruger</button>
+
+
+                <button onclick="" class="dropbtn">Log ind</button>
+                <img class="Login_icon" src="login.png" alt="Login icon">
+                <div id="myDropdown8" class="dropdown-content">
+
+
+                </div>
+
+                <form class="search_form">
+                    <input type="search" class="search_field" placeholder="Search...">
+                    <button type="button"><img src="search.svg" alt="Search icon" id="search_logo"></button>
+                </form>
+
+
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="extra">
+        <h3>Vælg ekstraudstyr:</h3>
+        <p>Eksl. moms</p>
+        <form>
+            <br>
+            
+            <label for="chauffeur"><input id="chauffeur" type="checkbox" name="extra"> Ekstra chauffør kr. 199</label>
+            <label for="childSeatBig"><input id="childSeatBig" type="checkbox" name="extra"> Barnesæde(5-12 år) kr. 155</label>
+            <label for="childSeatSmall"><input id="childSeatSmall" type="checkbox" name="extra"> Barnesæde(1-4 år) kr. 140</label>
+            <label for="lift_net"><input id="lift_net" type="checkbox" name="extra"> lift-net(0-1 år) kr. 100</label>
+            <label for="GPS"><input id="GPS" type="checkbox" name="extra"> GPS navigation kr. 250</label>
+            <label for="snowChains"><input id="snowChains" type="checkbox" name="extra"> Snekæder kr. 188</label>
+            <label for="roadAssistance"><input id="roadAssistance" type="checkbox" name="extra"> Vejhjælp kr. 120</label>
+            
+            <button type="submit">Videre</button>
+          </form>
+
+
+
+
+
+
+
+    </div>
+    <script src="solbiler.js"></script>
+</body>
+
+
+
+
+
+
+
+</html>
