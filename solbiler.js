@@ -12,6 +12,11 @@ var todaysDate = new Date().toISOString().split("T")[0];
 dateFromField.value = todaysDate;
 dateToField.value = todaysDate;
 
+function getTotalPrice()
+{
+  return 0;
+}
+
 function calculatePeriodInDays() {
   
   var dateFrom = new Date(dateFromField.value);
@@ -32,13 +37,6 @@ function calculateRentalPrice(dailySurcharge = 0, rentalPeriodInDays) {
   var baseRentalPrice = 495;
   var dailyRentalPrice = 100;
   var vatRate = 0.25;
-  var chauffeur = 199;
-  var childSeatBig = 155;
-  var childSeatSmall = 140;
-  var lift_net = 100;
-  var GPS = 250;
-  var snowChains = 188;
-  var roadAssistance = 120;
 
   var resultExclVat =
     baseRentalPrice + rentalPeriodInDays * (dailyRentalPrice + dailySurcharge);
@@ -46,9 +44,10 @@ function calculateRentalPrice(dailySurcharge = 0, rentalPeriodInDays) {
 
   return resultInclVat;
 }
+
 function extra(){
 
-
+sessionStorage.setItem("")
 
 
 }
@@ -83,6 +82,7 @@ function showCar(carObject, rentalPeriodInDays) {
   carNode.querySelector(".person-count").innerText = carObject.personCount;
   carNode.querySelector(".luggage-count").innerText = carObject.luggageCount;
   carNode.querySelector(".price").innerText = formatPrice(rentalPrice);
+  carNode.querySelector("a").href = "ekstra.html";
 
     carsList.appendChild(carNode);
 }
