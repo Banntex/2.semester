@@ -375,4 +375,11 @@ main {
     padding: 5px;
    display: flex
    flex-wrap: wrap;
+   float :right;
+}
+
+#rental-details{
+    margin: 15px;
+    padding: 5px;
+    
 }

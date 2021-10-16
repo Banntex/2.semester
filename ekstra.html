@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="myStyle.css">
-        <link rel="stylesheet" href="mobile.css">
-        <title>Solbiler | Forside</title>
-    </head>
-<body>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="myStyle.css">
+    <link rel="stylesheet" href="mobile.css">
+    <title>Solbiler | Forside</title>
+</head>
+
+<body>
     <header class="navigation__container">
         <nav id="nav_bar">
             <!-- The mobile menu icon -->
@@ -25,8 +26,6 @@
                     <h2 class="logo">Solbiler Aps</h2>
                 </div>
                 <button class="dropbtn" onclick="location.href='index.html';">Hjem</button>
-
-
 
                 <button class="dropbtn" onclick="location.href='ekstra.html';">Kontakt os</button>
 
@@ -51,62 +50,65 @@
 
         </nav>
     </header>
+    <main>
+        <div id="rental-details">
+            <h3>Du har valgt</h3>
+            <dl>
+                <dt>Biltype</dt>
+                <dd id="rental-car"></dd>
+            </dl>
+        </div>
+        <div class="extra">
+            <h3>Vælg ekstraudstyr:</h3>
+            <p>Eksl. moms</p>
+            <form class="items">
+                <br>
+                <label for="chauffeur"><input class="extraInput" id="chauffeur" type="checkbox" name="extraChaffeur"
+                        value="199"> Ekstra
+                    chauffør kr. 199</label>
+                <label for="childSeatBig"><input class="extraInput" id="childSeatBig" type="checkbox"
+                        name="extraChildSeatBig" value="155"> Barnesæde(5-12 år) kr. 155</label>
+                <label for="childSeatSmall"><input class="extraInput" id="childSeatSmall" type="checkbox"
+                        name="extraChildSeatSmall" value="140"> Barnesæde(1-4 år) kr. 140</label>
+                <label for="lift_net"><input class="extraInput" id="lift_net" type="checkbox" name="extraLiftNet"
+                        value="100">
+                    lift-net(0-1 år) kr. 100</label>
+                <label for="GPS"><input class="extraInput" id="GPS" type="checkbox" name="extraGPSNav" value="250"> GPS
+                    navigation kr.
+                    250</label>
+                <label for="snowChains"><input class="extraInput" id="snowChains" type="checkbox" name="extraSnowChains"
+                        value="188">
+                    Snekæder kr. 188</label>
+                <label for="roadAssistance"><input class="extraInput" id="roadAssistance" type="checkbox"
+                        name="extraRoadHelp" value="120"> Vejhjælp kr. 120</label>
+    
+                <button type="submit">Videre</button>
+            </form>
+            <h1>Samlet pris:</h1>
+            <h2 id="totalPriceElement">0 kr ,-</h2>
+        </div>
+    
+        
 
-    <div class="extra">
-        <h3>Vælg ekstraudstyr:</h3>
-        <p>Eksl. moms</p>
-        <form class="items">
-            <br>
-            <label for="chauffeur"><input class="extraInput" id="chauffeur" type="checkbox" name="extraChaffeur"> Ekstra chauffør kr. 199</label>
-            <label for="childSeatBig"><input class="extraInput" id="childSeatBig" type="checkbox" name="extraChildSeatBig"> Barnesæde(5-12 år) kr. 155</label>
-            <label for="childSeatSmall"><input class="extraInput" id="childSeatSmall" type="checkbox" name="extraChildSeatSmall"> Barnesæde(1-4 år) kr. 140</label>
-            <label for="lift_net"><input class="extraInput" id="lift_net" type="checkbox" name="extraLiftNet"> lift-net(0-1 år) kr. 100</label>
-            <label for="GPS"><input class="extraInput" id="GPS" type="checkbox" name="extraGPSNav"> GPS navigation kr. 250</label>
-            <label for="snowChains"><input class="extraInput" id="snowChains" type="checkbox" name="extraSnowChains"> Snekæder kr. 188</label>
-            <label for="roadAssistance"><input class="extraInput" id="roadAssistance" type="checkbox" name="extraRoadHelp"> Vejhjælp kr. 120</label>
-            <label for="nicklasAssistance"><input class="extraInput" id="nicklasAss" type="checkbox" name="extraNicklasAss"> Nicklas brugervejledning</label>
-            <label for="danielHelp"><input class="extraInput" id="danielHelp" type="checkbox" name="extraDanielHelp"> Daniel brugervejledning</label>
 
-            <button type="submit">Videre</button>
-          </form>
-        <h1>Samlet pris:</h1>
-        <h2 id="totalPriceElement">0 kr ,-</h2>
-    </div>
+    </main>
+
     <script src="solbiler.js"></script>
     <script>
-
-        function getTotalPrice()
-        {
-            var total_price = 0;
-            // Javascript is dumb, so convert string to boolean and then convert it to integer with +operator
-            total_price += +(sessionStorage.getItem("extraChaffeur")        == "true") * 199.0;
-            total_price += +(sessionStorage.getItem("extraChildSeatBig")    == "true") * 155.0;
-            total_price += +(sessionStorage.getItem("extraChildSeatSmall")  == "true") * 140.0;
-            total_price += +(sessionStorage.getItem("extraLiftNet")         == "true") * 100.0;
-            total_price += +(sessionStorage.getItem("extraGPSNav")          == "true") * 250.0;
-            total_price += +(sessionStorage.getItem("extraSnowChains")      == "true") * 188.0;
-            total_price += +(sessionStorage.getItem("extraRoadHelp")        == "true") * 120.0;
-            total_price += +(sessionStorage.getItem("extraNicklasAss")      == "true") * 999999999999.0;
-            total_price += -(sessionStorage.getItem("extraDanielHelp")           == "true") * 999999999999.0;
-            return total_price;
-        }
-
+        const url = new URL(window.location.href);
+        document.getElementById("rental-car").innerText = url.searchParams.get("car")
         // Add eventlistener to all checkboxes clicks - this should update the total price
+        let total_price = 0;
         document.querySelectorAll('.extraInput').forEach(item => {
             item.addEventListener('click', event => {
-                sessionStorage.setItem(event.srcElement.name, event.srcElement.checked);
-
-                document.getElementById("totalPriceElement").innerText = getTotalPrice() + " kr ,-";
+                if (item.checked == true) {
+                    total_price += Number(item.value);
+                } else {
+                    total_price -= Number(item.value);
+                }
+                document.getElementById("totalPriceElement").innerText = total_price + " kr";
             })
         })
-
     </script>
 </body>
-
-
-
-
-
-
-
 </html>

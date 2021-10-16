@@ -16,7 +16,6 @@ function getTotalPrice()
 {
   return 0;
 }
-
 function calculatePeriodInDays() {
   
   var dateFrom = new Date(dateFromField.value);
@@ -31,8 +30,6 @@ function calculatePeriodInDays() {
 
   return rentalPeriodInDays;
 }
-
-
 function calculateRentalPrice(dailySurcharge = 0, rentalPeriodInDays) {
   var baseRentalPrice = 495;
   var dailyRentalPrice = 100;
@@ -43,13 +40,6 @@ function calculateRentalPrice(dailySurcharge = 0, rentalPeriodInDays) {
   var resultInclVat = resultExclVat * (1 + vatRate);
 
   return resultInclVat;
-}
-
-function extra(){
-
-sessionStorage.setItem("")
-
-
 }
 
 function formatPrice(number) {
@@ -63,18 +53,12 @@ function formatPrice(number) {
     });
   }
 }
-
-
-function showCar(carObject, rentalPeriodInDays) {
-  
+function showCar(carObject, rentalPeriodInDays) { 
   var carNode = carTemplate.content.cloneNode(true);
-
-  
   var rentalPrice = calculateRentalPrice(
     carObject.dailySurcharge,
     rentalPeriodInDays
   );
- 
   carNode.querySelector("img").src = carObject.imageSrc;
   carNode.querySelector("img").alt = `Billede af ${carObject.name}`;
   carNode.querySelector("h1").innerText = carObject.name;
@@ -82,9 +66,10 @@ function showCar(carObject, rentalPeriodInDays) {
   carNode.querySelector(".person-count").innerText = carObject.personCount;
   carNode.querySelector(".luggage-count").innerText = carObject.luggageCount;
   carNode.querySelector(".price").innerText = formatPrice(rentalPrice);
-  carNode.querySelector("a").href = "ekstra.html";
-
-    carsList.appendChild(carNode);
+  const url = new URL("ekstra.html", window.location.origin)
+  url.searchParams.append("car", carObject.name);
+  carNode.querySelector("a").href = url.toString;
+  carsList.appendChild(carNode);
 }
 
 function handleSearch(event) {
