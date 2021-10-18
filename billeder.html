@@ -1,0 +1,24 @@
+<script>
+     var i = 0; // Dette er vores starts indeks på vores array af billeder
+        var images = [];
+        var time = 3000;
+
+        // Vores arrayliste af billede
+        images[0] = 'Image1.jpg'
+        images[1] = 'Image2.jpg'
+        images[2] = 'Image3.jpg'
+        images[3] = 'Image4.jpg'
+
+        // Nu vil vi gerne lave en funktion, som skifter vores billeder med starstværdien 0(i)
+        function changeImg(){
+            document.slide.src = images[i];
+            if(i <images.length - 1){
+                i++
+            }
+            else {
+                i = 0;
+            }
+            setTimeout("changeImg()", time);
+        }
+        window.onload = changeImg;
+</script>

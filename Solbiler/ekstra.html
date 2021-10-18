@@ -56,6 +56,10 @@
             <dl>
                 <dt>Biltype</dt>
                 <dd id="rental-car"></dd>
+                <dt>Antal dage</dt>
+                <dd id="rental-days"></dd>
+                <dt>Lejepris</dt>
+                <dd id="rental-price"></dd>
             </dl>
         </div>
         <div class="extra">
@@ -97,6 +101,8 @@
     <script>
         const url = new URL(window.location.href);
         document.getElementById("rental-car").innerText = url.searchParams.get("car")
+        document.getElementById("rental-days").innerText = url.searchParams.get("days")
+        document.getElementById("rental-price").innerText = url.searchParams.get("price")
         // Add eventlistener to all checkboxes clicks - this should update the total price
         let total_price = 0;
         document.querySelectorAll('.extraInput').forEach(item => {

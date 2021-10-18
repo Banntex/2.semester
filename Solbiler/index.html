@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="myStyle.css">
-    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="Solbiler/css/myStyle.css">
+    <link rel="stylesheet" href="Solbiler/css/mobile.css">
+    ><link rel="stylesheet" href="Solbiler/ekstra.html">
     <title>Solbiler | Forside</title>
 </head>
 
@@ -24,13 +25,13 @@
 
                 <div class="logo_style">
                 
-                    <h2 class="logo" href="index.html">Solbiler Aps</h2>
+                    <h2 class="logo" href="solbiler/index.html">Solbiler Aps</h2>
                 </div>
-                <button class="dropbtn" onclick="location.href='index.html';">Hjem</button>
+                <button class="dropbtn" onclick="location.href='solbiler/index.html';">Hjem</button>
 
 
 
-                <button class="dropbtn" onclick="location.href='ekstra.html';">Kontakt os</button>
+                <button class="dropbtn" onclick="location.href='#';">Kontakt os</button>
 
 
                 <button class="dropbtn" onclick="location.href='#';">Opret bruger</button>
@@ -45,7 +46,7 @@
 
                 <form class="search_form">
                     <input type="search" class="search_field" placeholder="Search...">
-                    <button type="button"><img src="search.svg" alt="Search icon" id="search_logo"></button>
+                    <button type="button"><img src="Solbiler/images/search.svg" alt="Search icon" id="search_logo"></button>
                 </form>
 
 
@@ -109,7 +110,36 @@
         </template>
         <section id="cars-list"></section>
     </main>
-    <script src="solbiler.js"></script>
+    <script src="/Solbiler/js/solbiler.js">
+        // Dette er vores starts indeks på vores array af billeder
+        var i = 0; 
+        var images = [];
+        var time = 3000;
+
+        // Vores arrayliste af billede
+        images[0] = '/solbiler/images/i1.jpg'
+        images[1] = '/solbiler/images/i2.jpg'
+        images[2] = '/solbiler/images/i3.jpg'
+        images[3] = '/solbiler/images/i4.jpg'
+
+        // Nu vil vi gerne lave en funktion, som skifter vores billeder med starstværdien 0(i)
+        function changeImg(){
+            document.slide.src = images[i];
+            if(i < images.length - 1){
+                i++
+            }
+            else {
+                i = 0;
+            }
+            setTimeout("changeImg()", time);
+        }
+        window.onload = changeImg;
+
+
+
+    </script>
+    <h2>Kunne du godt tænke dig at prøve vores sports biler?</h2>
+    <img name="slide" width="400" height="200"> 
 </body>
 
 </html>

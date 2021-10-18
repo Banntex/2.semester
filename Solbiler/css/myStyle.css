@@ -152,7 +152,7 @@ main {
 .hero {
     display: flex;
     align-items: center;
-    background-image: url("road.jpg");
+    background-image: url("/Solbiler/images/road.jpg");
     background-position: center center;
     margin: 0 auto;
     height: 500px;
@@ -374,7 +374,7 @@ main {
     margin: 15px;
     padding: 5px;
    display: flex
-   flex-wrap: wrap;
+   flex-wrap wrap;
    float :right;
 }
 
