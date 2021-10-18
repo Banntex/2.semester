@@ -91,7 +91,7 @@ function handleSearch(event) {
 
   var rentalPeriodInDays = calculatePeriodInDays();
     
-  fetch("https://api.jsonbin.io/b/61387e669548541c29ae1184/1", {
+  fetch("https://api.jsonbin.io/b/61387e669548541c29ae1184/2", {
     headers: {
       "X-Master-Key":
         "$2b$10$A0AwlK4vKaImkWDDJb2c9.K8W1yZAnbJOJ6R.q6d9/ZCh6YSBBgxm",

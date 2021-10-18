@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="myStyle.css">
-    <link rel="stylesheet" href="mobile.css">
-    <title>Solbiler | Forside</title>
+    <link rel="stylesheet" href="css/myStyle.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    ><link rel="stylesheet" href="index.html">
+    <title>Solbiler | Ekstra</title>
 </head>
 
 <body>
@@ -27,14 +28,14 @@
                 </div>
                 <button class="dropbtn" onclick="location.href='index.html';">Hjem</button>
 
-                <button class="dropbtn" onclick="location.href='ekstra.html';">Kontakt os</button>
+                <button class="dropbtn" onclick="location.href='#';">Kontakt os</button>
 
 
                 <button class="dropbtn" onclick="location.href='#';">Opret bruger</button>
 
 
                 <button onclick="" class="dropbtn">Log ind</button>
-                <img class="Login_icon" src="login.png" alt="Login icon">
+                <img class="Login_icon" src="images/login.png" alt="Login icon">
                 <div id="myDropdown8" class="dropdown-content">
 
 
@@ -42,7 +43,7 @@
 
                 <form class="search_form">
                     <input type="search" class="search_field" placeholder="Search...">
-                    <button type="button"><img src="search.svg" alt="Search icon" id="search_logo"></button>
+                    <button type="button"><img src="images/search.svg" alt="Search icon" id="search_logo"></button>
                 </form>
 
 
@@ -97,7 +98,7 @@
 
     </main>
 
-    <script src="solbiler.js"></script>
+    <script src="js/solbiler.js"></script>
     <script>
         const url = new URL(window.location.href);
         document.getElementById("rental-car").innerText = url.searchParams.get("car")

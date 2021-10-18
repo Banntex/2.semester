@@ -23,6 +23,7 @@
 
 html {
     font-size: 100%;
+    
 }
 
 .page__body {
@@ -30,6 +31,7 @@ html {
     max-width: 1680px;
     margin: 0 auto;
     background-color: white;
+    
 
 }
 
@@ -152,7 +154,7 @@ main {
 .hero {
     display: flex;
     align-items: center;
-    background-image: url("/Solbiler/images/road.jpg");
+    background-image: url("road.jpg");
     background-position: center center;
     margin: 0 auto;
     height: 500px;
