@@ -67,7 +67,7 @@ function showCar(carObject, rentalPeriodInDays) {
   carNode.querySelector(".luggage-count").innerText = carObject.luggageCount;
   carNode.querySelector(".price").innerText = formatPrice(rentalPrice);
 
-  const url = new URL("ekstra.html", window.location.origin)
+  const url = new URL("Solbiler/ekstra.html", window.location.origin);
   url.searchParams.append("car", carObject.name);
   url.searchParams.append("days", rentalPeriodInDays);
   url.searchParams.append("price", rentalPrice);
