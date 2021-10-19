@@ -38,7 +38,7 @@
 
 
                 <button onclick="" class="dropbtn">Log ind</button>
-                <img class="Login_icon" src="images/login.png" alt="Login icon">
+                <img class="Login_icon" src="billeder/login.png" alt="Login icon">
                 <div id="myDropdown8" class="dropdown-content">
 
 
@@ -46,7 +46,7 @@
 
                 <form class="search_form">
                     <input type="search" class="search_field" placeholder="Search...">
-                    <button type="button"><img src="images/search.svg" alt="Search icon" id="search_logo"></button>
+                    <button type="button"><img src="billeder/search.svg" alt="Search icon" id="search_logo"></button>
                 </form>
 
 
@@ -111,36 +111,11 @@
         </template>
         <section id="cars-list"></section>
     </main>
+    <img name="slide" max-width="400" height="200"> 
     <script src="js/solbiler.js">
-        // Dette er vores starts indeks på vores array af billeder
-        var i = 0; 
-        var images = [];
-        var time = 3000;
-
-        // Vores arrayliste af billede
-        images[0] = 'images/i1.jpg'
-        images[1] = 'images/i2.jpg'
-        images[2] = 'images/i3.jpg'
-        images[3] = 'images/i4.jpg'
-
-        // Nu vil vi gerne lave en funktion, som skifter vores billeder med starstværdien 0(i)
-        function changeImg(){
-            document.slide.src = images[i];
-            if(i < images.length - 1){
-                i++
-            }
-            else {
-                i = 0;
-            }
-            setTimeout("changeImg()", time);
-        }
-        window.onload = changeImg;
-
-
-
+    
     </script>
     <h2>Kunne du godt tænke dig at prøve vores sports biler?</h2>
-    <img name="slide" width="400" height="200"> 
+    
 </body>
-
 </html>
