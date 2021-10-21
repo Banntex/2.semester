@@ -66,11 +66,12 @@ function showCar(carObject, rentalPeriodInDays) {
   carNode.querySelector(".person-count").innerText = carObject.personCount;
   carNode.querySelector(".luggage-count").innerText = carObject.luggageCount;
   carNode.querySelector(".price").innerText = formatPrice(rentalPrice);
-
-  const url = new URL("Solbiler/ekstra.html", window.location.origin);
+  const url = new URL("ekstra.html", window.location.origin);
   url.searchParams.append("car", carObject.name);
   url.searchParams.append("days", rentalPeriodInDays);
   url.searchParams.append("price", rentalPrice);
+  url.searchParams.append("dateFrom", dateFromField.value);
+  url.searchParams.append("dateTo", dateToField.value);
 
   carNode.querySelector("a").href = url.toString();
   carsList.appendChild(carNode);
@@ -83,7 +84,6 @@ function handleSearch(event) {
  
   carsList.innerHTML = "";
 
-  
   var requiredPersonCount = document.getElementById("person-count").value;
 
  

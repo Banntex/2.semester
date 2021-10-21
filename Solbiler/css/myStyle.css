@@ -150,6 +150,10 @@ main {
     text-decoration: none;
     color: black;
 }
+name[slide]{
+    margin: 5px;
+    padding: 5px;
+}
 
 .hero {
     display: flex;

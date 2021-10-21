@@ -1,54 +1,40 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/myStyle.css">
     <link rel="stylesheet" href="css/mobile.css">
-    ><link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" href="kunde.html">
+   
+
     <title>Solbiler | Ekstra</title>
 </head>
-
 <body>
     <header class="navigation__container">
         <nav id="nav_bar">
             <!-- The mobile menu icon -->
             <label for="mobileicon" class="mobileiconlabel">&#9776;</label>
             <input type="checkbox" id="mobileicon" class="mobileicon">
-
             <!-- Menu items -->
-
             <div class="menuitems__container">
-
                 <!--The company logo-->
-
                 <div class="logo_style">
                     <h2 class="logo">Solbiler Aps</h2>
                 </div>
                 <button class="dropbtn" onclick="location.href='index.html';">Hjem</button>
-
                 <button class="dropbtn" onclick="location.href='#';">Kontakt os</button>
-
-
                 <button class="dropbtn" onclick="location.href='#';">Opret bruger</button>
-
-
                 <button onclick="" class="dropbtn">Log ind</button>
-                <img class="Login_icon" src="images/login.png" alt="Login icon">
+                <img class="Login_icon" src="billeder/login.png" alt="Login icon">
                 <div id="myDropdown8" class="dropdown-content">
-
-
                 </div>
-
                 <form class="search_form">
                     <input type="search" class="search_field" placeholder="Search...">
-                    <button type="button"><img src="images/search.svg" alt="Search icon" id="search_logo"></button>
+                    <button type="button"><img src="billeder/search.svg" alt="Search icon" id="search_logo"></button>
                 </form>
-
-
             </div>
-
         </nav>
     </header>
     <main>
@@ -57,65 +43,48 @@
             <dl>
                 <dt>Biltype</dt>
                 <dd id="rental-car"></dd>
+                <dt>Afhentes</dt>
+                <dd id="rental-from"></dd>
+                <dt>Afleveres</dt>
+                <dd id="rental-to"></dd>
                 <dt>Antal dage</dt>
                 <dd id="rental-days"></dd>
                 <dt>Lejepris</dt>
                 <dd id="rental-price"></dd>
             </dl>
         </div>
-        <div class="extra">
             <h3>Vælg ekstraudstyr:</h3>
             <p>Eksl. moms</p>
-            <form class="items">
+           
+            <form action="kunde.html">
+                <div class="Checkboxes">
                 <br>
-                <label for="chauffeur"><input class="extraInput" id="chauffeur" type="checkbox" name="extraChaffeur"
-                        value="199"> Ekstra
+                <label>
+                    <input type="checkbox" name="extra" value="199" /> Ekstra
                     chauffør kr. 199</label>
-                <label for="childSeatBig"><input class="extraInput" id="childSeatBig" type="checkbox"
-                        name="extraChildSeatBig" value="155"> Barnesæde(5-12 år) kr. 155</label>
-                <label for="childSeatSmall"><input class="extraInput" id="childSeatSmall" type="checkbox"
-                        name="extraChildSeatSmall" value="140"> Barnesæde(1-4 år) kr. 140</label>
-                <label for="lift_net"><input class="extraInput" id="lift_net" type="checkbox" name="extraLiftNet"
-                        value="100">
-                    lift-net(0-1 år) kr. 100</label>
-                <label for="GPS"><input class="extraInput" id="GPS" type="checkbox" name="extraGPSNav" value="250"> GPS
-                    navigation kr.
-                    250</label>
-                <label for="snowChains"><input class="extraInput" id="snowChains" type="checkbox" name="extraSnowChains"
-                        value="188">
-                    Snekæder kr. 188</label>
-                <label for="roadAssistance"><input class="extraInput" id="roadAssistance" type="checkbox"
-                        name="extraRoadHelp" value="120"> Vejhjælp kr. 120</label>
+                <label>
+                    <input type="checkbox" name="extra" value="155" /> Barnesæde(5-12 år) kr. 155</label>
+                <label>
+                    <input type="checkbox" name="extra" value="140" /> Barnesæde(1-4 år) kr. 140</label>
+                <label>
+                    <input type="checkbox" name="extra" value="100" /> lift-net(0-1 år) kr. 100</label>
+                <label>
+                    <input type="checkbox" name="extra" value="250" /> GPS navigation kr. 250</label>
+                <label>
+                    <input type="checkbox" name="extra" value="188" /> Snekæder kr. 188</label>
+                <label>
+                    <input type="checkbox" name="extra" value="120" /> Vejhjælp kr. 120</label>
     
-                <button type="submit">Videre</button>
+                <button type="submit" class="link">Videre</button>
             </form>
-            <h1>Samlet pris:</h1>
-            <h2 id="totalPriceElement">0 kr ,-</h2>
+            <p>
+                i alt
+                <span id="price-incl-extras">0</span>
+                kr
+            </p>
+            
         </div>
-    
-        
-
-
     </main>
-
-    <script src="js/solbiler.js"></script>
-    <script>
-        const url = new URL(window.location.href);
-        document.getElementById("rental-car").innerText = url.searchParams.get("car")
-        document.getElementById("rental-days").innerText = url.searchParams.get("days")
-        document.getElementById("rental-price").innerText = url.searchParams.get("price")
-        // Add eventlistener to all checkboxes clicks - this should update the total price
-        let total_price = 0;
-        document.querySelectorAll('.extraInput').forEach(item => {
-            item.addEventListener('click', event => {
-                if (item.checked == true) {
-                    total_price += Number(item.value);
-                } else {
-                    total_price -= Number(item.value);
-                }
-                document.getElementById("totalPriceElement").innerText = total_price + " kr";
-            })
-        })
-    </script>
+    <script src="js/ekstra.js"></script>
 </body>
 </html>

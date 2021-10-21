@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/myStyle.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="ekstra.html">
+    <title>Solbiler | Kundeoplysninger</title>
+    </head>
+    <body>
+        <header class="navigation__container">
+            <nav id="nav_bar">
+                <!-- The mobile menu icon -->
+                <label for="mobileicon" class="mobileiconlabel">&#9776;</label>
+                <input type="checkbox" id="mobileicon" class="mobileicon">
+    
+                <!-- Menu items -->
+    
+                <div class="menuitems__container">
+    
+                    <!--The company logo-->
+    
+                    <div class="logo_style">
+                    
+                        <h2 class="logo" href="index.html">Solbiler Aps</h2>
+                    </div>
+                    <button class="dropbtn" onclick="location.href='index.html';">Hjem</button>
+    
+    
+    
+                    <button class="dropbtn" onclick="location.href='#';">Kontakt os</button>
+    
+    
+                    <button class="dropbtn" onclick="location.href='#';">Opret bruger</button>
+    
+    
+                    <button onclick="" class="dropbtn">Log ind</button>
+                    <img class="Login_icon" src="billeder/login.png" alt="Login icon">
+                    <div id="myDropdown8" class="dropdown-content">
+    
+    
+                    </div>
+    
+                    <form class="search_form">
+                        <input type="search" class="search_field" placeholder="Search...">
+                        <button type="button"><img src="billeder/search.svg" alt="Search icon" id="search_logo"></button>
+                    </form>
+    
+    
+                </div>
+    
+            </nav>
+        </header>
+        
+        <div id="rental-details">
+            <h3>Din booking</h3>
+            <dl>
+                <dt>Biltype</dt>
+                <dd id="rental-car"></dd>
+                <dt>Afhentes</dt>
+                <dd id="rental-from"></dd>
+                <dt>Afleveres</dt>
+                <dd id="rental-to"></dd>
+                <dt>Antal dage</dt>
+                <dd id="rental-days"></dd>
+                <dt>Lejepris</dt>
+                <dd id="rental-price"></dd>
+            </dl>
+            <p id="extrasListParagraph"></p>
+        </div> 
+        <div class="info">
+            
+
+
+
+
+
+        </div>
+        <script src="js/kunde.js">
+        </script>
+    </body>
+</html>
