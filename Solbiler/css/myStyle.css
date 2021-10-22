@@ -303,7 +303,7 @@ name[slide]{
     color: var(--color-beige);
     font-weight: 600;
     font-size: 16px;
-    float: right;
+    float: left;
     transition: background-color 0.2s ease-in-out;
 }
 /* List of cars ------------------------------- */
@@ -378,14 +378,28 @@ name[slide]{
 }
 .extra {
     margin: 15px;
-    padding: 5px;
+    padding: 10px;
    display: flex
    flex-wrap wrap;
    float :right;
 }
 
 #rental-details{
-    margin: 15px;
-    padding: 5px;
-    
+    padding: 10px; var(--base-space);
+    background-color: var(--color-beige);
+    border: 1px solid var(--color-brown);
+    border-radius: 3px;
+    width: 10%;
+    box-sizing: border-box;
+    margin: 10;  
+}
+.Checkboxes{
+    padding: var(--base-space);
+    background-color: var(--color-beige);
+    border: 1px solid var(--color-brown);
+    border-radius: 3px;
+    width: 20%;
+    box-sizing: border-box;
+    display:grid;
+  
 }

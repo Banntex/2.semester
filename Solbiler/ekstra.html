@@ -26,6 +26,7 @@
                 <button class="dropbtn" onclick="location.href='index.html';">Hjem</button>
                 <button class="dropbtn" onclick="location.href='#';">Kontakt os</button>
                 <button class="dropbtn" onclick="location.href='#';">Opret bruger</button>
+                <button class="dropbtn" onclick="location.href='omOs.html';">Om Os</button>
                 <button onclick="" class="dropbtn">Log ind</button>
                 <img class="Login_icon" src="billeder/login.png" alt="Login icon">
                 <div id="myDropdown8" class="dropdown-content">
@@ -38,6 +39,7 @@
         </nav>
     </header>
     <main>
+        <section class="udstyr">
         <div id="rental-details">
             <h3>Du har valgt</h3>
             <dl>
@@ -53,11 +55,11 @@
                 <dd id="rental-price"></dd>
             </dl>
         </div>
-            <h3>Vælg ekstraudstyr:</h3>
-            <p>Eksl. moms</p>
-           
+  
             <form action="kunde.html">
                 <div class="Checkboxes">
+                    <h3>Vælg ekstraudstyr:</h3>
+            <p>Eksl. moms</p>
                 <br>
                 <label>
                     <input type="checkbox" name="extra" value="199" /> Ekstra
@@ -75,8 +77,9 @@
                 <label>
                     <input type="checkbox" name="extra" value="120" /> Vejhjælp kr. 120</label>
     
-                <button type="submit" class="link">Videre</button>
+                    <button type="submit" class="link">Videre</button>
             </form>
+            
             <p>
                 i alt
                 <span id="price-incl-extras">0</span>
@@ -84,6 +87,8 @@
             </p>
             
         </div>
+    </section>
+    
     </main>
     <script src="js/ekstra.js"></script>
 </body>

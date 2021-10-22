@@ -144,3 +144,7 @@ searchButton.addEventListener("click", handleSearch);
       setTimeout("changeImg()", time);
   }
   window.onload = changeImg;
+
+
+
+ 
