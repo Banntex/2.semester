@@ -21,14 +21,23 @@ function formatPrice(price = 0){
        
         // Add eventlistener to all checkboxes clicks - this should update the total price
         
-        const form = document.querySelectorAll("form")[1];
+        const form = document.querySelector("#extraForm");
         form.addEventListener("change", function(event){
             let extraPrice = 0;
+            
+            /*this.elements.extra.forEach(element => {
+                extraPrice += element.checked ? addVat(Number(element.value)) : 0;
+            });*/
+
             console.log("extraPrice");
             for(const item of this.elements.extra) {
                 if (item.checked === true) {
                     const numericValue = Number(item.value);
                     extraPrice += addVat(numericValue);
+                } 
+                else
+                {
+                    extraPrice += 0;
                 }
             }
             priceOutput.innerText = formatPrice(basePrice + extraPrice);

@@ -66,6 +66,9 @@ function showCar(carObject, rentalPeriodInDays) {
   carNode.querySelector(".person-count").innerText = carObject.personCount;
   carNode.querySelector(".luggage-count").innerText = carObject.luggageCount;
   carNode.querySelector(".price").innerText = formatPrice(rentalPrice);
+
+
+  
   const url = new URL("ekstra.html", window.location.origin);
   url.searchParams.append("car", carObject.name);
   url.searchParams.append("days", rentalPeriodInDays);

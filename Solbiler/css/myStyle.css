@@ -385,7 +385,7 @@ name[slide]{
 }
 
 #rental-details{
-    padding: 10px; var(--base-space);
+    padding: 10px var(--base-space);
     background-color: var(--color-beige);
     border: 1px solid var(--color-brown);
     border-radius: 3px;
